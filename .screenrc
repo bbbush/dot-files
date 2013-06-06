@@ -1,0 +1,9 @@
+autodetach on
+defscrollback 2000
+shell bash
+startup_message off
+vbell off
+
+# http://serverfault.com/questions/3740/what-are-useful-screenrc-settings
+hardstatus alwayslastline '%{= kg}[ %{B}%H %{g}%h%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+

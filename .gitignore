@@ -1,0 +1,9 @@
+Desktop
+.thumbnails/
+.inputrc
+.lesshst
+.gimp*
+.bash_history
+*~
+*.elc
+*

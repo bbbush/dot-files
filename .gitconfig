@@ -1,0 +1,14 @@
+[user]
+	email = Blue.Yuan@morningstar.com
+	name = Yijun "Blue" Yuan
+[color]
+	ui = auto
+[github]
+	user = bbbush
+[push]
+	default = simple
+[credential]
+	helper = !'c:/cygwin/opt/Git/cmd/git-credential-winstore.exe'
+[core]
+	autocrlf = true
+	ignorecase = true
