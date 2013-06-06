@@ -197,8 +197,16 @@
 # 
 # alias cd=cd_func
 
+function print_screen_title {
+  echo -n '\[\ek'$1'\e\\\]'
+}
+
+function print_tty_title {
+  echo -n '\[\e]0;'$1'\a\]'
+}
+
 [ "$TERM" = "screen" ] &&
- PROMPT_COMMAND="echo -n -e \"\033k\033\0134\"; $PROMPT_COMMAND"
+  PS1="$(print_tty_title \\w)\n$(print_screen_title)${PS1/\\n/}"
 
 alias vi='"$PROGRAMFILES/Vim/vim73/gvim.exe"'
 alias git='/opt/Git/cmd/git.exe'
