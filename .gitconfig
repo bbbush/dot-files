@@ -3,6 +3,9 @@
 	name = Yijun "Blue" Yuan
 [color]
 	ui = auto
+	branch = always
+	diff = always
+	status = always
 [github]
 	user = bbbush
 [push]

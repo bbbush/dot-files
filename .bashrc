@@ -218,3 +218,4 @@ export GIT_TFS_CLIENT=2008
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTCONTROL=ignoreboth
+export LESS=-R
