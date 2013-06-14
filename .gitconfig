@@ -12,3 +12,4 @@
 [core]
 	autocrlf = true
 	ignorecase = true
+	filemode = false
