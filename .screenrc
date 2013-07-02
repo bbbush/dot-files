@@ -1,0 +1,40 @@
+#
+# Example of a user's .screenrc file
+#
+
+# This is how one can set a reattach password:
+# password ODSJQf.4IJN7E    # "1234"
+
+# no annoying audible bell, please
+vbell off
+
+# detach on hangup
+autodetach on
+
+# don't display the copyright page
+startup_message off
+
+# emulate .logout message
+pow_detach_msg "Screen session of $LOGNAME $:cr:$:nl:ended."
+
+# advertise hardstatus support to $TERMCAP
+# termcapinfo  * '' 'hs:ts=\E_:fs=\E\\:ds=\E_\E\\'
+
+# make the shell in every window a login shell
+#shell -$SHELL
+
+# autoaka testing
+# shellaka '> |tcsh'
+# shellaka '$ |sh'
+
+# set every new windows hardstatus line to somenthing descriptive
+# defhstatus "screen: ^En (^Et)"
+
+defscrollback 1500
+
+# don't kill window after the process died
+# zombie "^["
+
+# enable support for the "alternate screen" capability in all windows
+# altscreen on
+
