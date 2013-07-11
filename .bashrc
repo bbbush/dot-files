@@ -208,7 +208,8 @@ function print_tty_title {
 [ "$TERM" = "screen" ] &&
   PS1="$(print_tty_title \\w)\n$(print_screen_title)${PS1/\\n/}"
 
-alias vi='"$PROGRAMFILES/Vim/vim73/gvim.exe"'
+export EDITOR='"$PROGRAMFILES/Vim/vim73/gvim.exe"'
+alias vi=$EDITOR
 alias git='/opt/Git/cmd/git.exe'
 alias chocolatey='/opt/chocolatey/bin/chocolatey.bat'
 alias start=cygstart
