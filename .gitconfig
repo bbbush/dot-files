@@ -16,3 +16,6 @@
 	autocrlf = true
 	ignorecase = true
 	filemode = false
+[gui]
+	encoding = utf-8
+	fontdiff = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
