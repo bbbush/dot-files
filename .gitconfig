@@ -19,3 +19,5 @@
 [gui]
 	encoding = utf-8
 	fontdiff = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+[alias]
+	new = "!_() { git log $1@{1}..$1@{0} \"$@\"; }; _"
