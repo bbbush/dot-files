@@ -20,4 +20,15 @@
 	encoding = utf-8
 	fontdiff = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 [alias]
-	new = "!_() { git log $1@{1}..$1@{0} \"$@\"; }; _"
+  new = "!_() { git log $1@{1}..$1@{0} \"$@\"; }; _"
+  psbin = "!_() { \
+  	if [ -z "$1" ]; \
+  	then echo \"missing remote branch name\"; \
+  	exit; \
+  	fi; \
+  	git fetch psbin; \
+  	git archive psbin/$1 | tar xf -; \
+  	git archive psbin/$1.labels | tar xf -; \
+  	git archive psbin/$1.config | tar xf -; \
+  	find . -type f -a \\( -name *.dll -o -name *.exe \\) -print0 | xargs -0 chmod +x; \
+  	}; _"
