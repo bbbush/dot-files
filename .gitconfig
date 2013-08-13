@@ -21,6 +21,7 @@
 	fontdiff = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 [alias]
   new = "!_() { git log $1@{1}..$1@{0} \"$@\"; }; _"
+  k = "!_() { gitk \"$@\"; }; _"
   psbin = "!_() { \
   	if [ -z "$1" ]; \
   	then echo \"missing remote branch name\"; \
