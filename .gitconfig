@@ -16,6 +16,9 @@
 	autocrlf = true
 	ignorecase = true
 	filemode = false
+	whitespace = trailing-space,space-before-tab
+[apply]
+	whitespace = fix
 [gui]
 	encoding = utf-8
 	fontdiff = -family Consolas -size 10 -weight normal -slant roman -underline 0 -overstrike 0
@@ -33,3 +36,4 @@
   	git archive psbin/$1.config | tar xf -; \
   	find . -type f -a \\( -name *.dll -o -name *.exe \\) -print0 | xargs -0 chmod +x; \
   	}; _"
+  addiw = "!_() { git diff -w --no-color \"$@\" | git apply --cached --ignore-whitespace; }; _"
