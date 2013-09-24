@@ -41,3 +41,17 @@
 	git diff -w --no-color \"$@\" | \
 	git apply --cached --ignore-whitespace; \
 	}; _"
+  csproj = "!_() { \
+	for f in `git diff --name-status \"$@\" | \
+		grep -v ^D | \
+		grep '[.]csproj$' | \
+		cut -c3-`; do \
+		if [[ `tail -c2 \"$f\"` = `echo -e '\\r\\n'` ]] ; then \
+			echo \"update $f\"; \
+			sed 's/\\r//g' \"$f\" | \
+			awk '{if (NR>1) printf(\"\\r\\n\"); printf(\"%s\",$0)}' > .tmp~ && \
+			mv .tmp~ \"$f\" && \
+			git add \"$f\"; \
+		fi; \
+	done; \
+	}; _"
