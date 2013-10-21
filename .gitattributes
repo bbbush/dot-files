@@ -1,0 +1,17 @@
+# Auto detect text files and perform LF normalization
+# http://davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/
+* text=auto
+
+#
+# The above will handle all files NOT found below
+#
+# These files are text and should be normalized (Convert crlf => lf)
+*.gitattributes text eol=lf
+*.gitconfig text eol=lf
+*.gitignore text eol=lf
+*.sh     text eol=lf
+*.bash_profile  text eol=lf
+*.bashrc text eol=lf
+*.profile text eol=lf
+*.screenrc text eol=lf
+
