@@ -198,15 +198,15 @@
 # alias cd=cd_func
 
 function print_screen_title {
-  echo -n '\[\ek'$1'\e\\\]'
+  echo -n '\[\ek'"$@"'\e\\\]'
 }
 
 function print_tty_title {
-  echo -n '\[\e]0;'$1'\a\]'
+  echo -n '\[\e]0;'"$@"'\a\]'
 }
 
 [ "$TERM" = "screen" ] &&
-  PS1="$(print_tty_title \\w)\n$(print_screen_title)${PS1/\\n/}"
+  PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
 
 export EDITOR='"$PROGRAMFILES/Vim/vim74/gvim.exe"'
 alias vi=$EDITOR
