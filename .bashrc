@@ -48,4 +48,4 @@ export HISTFILESIZE=
 export HISTSIZE=
 export HISTCONTROL=ignoreboth
 
-# vim: set ai noexpandtab sw=2:
+# vim: set ai expandtab sw=2:
