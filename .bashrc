@@ -215,8 +215,24 @@ alias chocolatey='/opt/chocolatey/bin/chocolatey.bat'
 alias start=cygstart
 alias screen='screen -D -R -R'
 alias l.='ls -Ad .*'
+
+function ssh_keygen_internal_server
+{
+  if [ "$1" = "" ]; then
+    echo "run ssh-keygen without params"
+    ssh-keygen
+  else
+    SSH_USER_HOST=msdomain1\\byuan@$1
+    ssh-keygen -t rsa -b 4096 -C $SSH_USER_HOST -f .ssh/id_rsa_$1
+    #ssh-copy-id -i .ssh/id_rsa_$1 $SSH_USER_HOST
+  fi
+}
+
+alias ssh-keygen=ssh_keygen_internal_server
 export GIT_TFS_CLIENT=2008
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTCONTROL=ignoreboth
 export LESS=-R
+
+# vim: set ai expandtab sw=2:
