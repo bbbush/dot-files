@@ -28,7 +28,8 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 " Personal flavor
-set ai si ci
+set ai
+filetype indent on
 set nu tw=78 sw=2 ts=4
 " set et  " expandtab when hit 'Tab' key, should set in individual files
 set wildmenu
