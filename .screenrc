@@ -6,7 +6,30 @@ startup_message off
 vbell off
 
 # http://serverfault.com/questions/3740/what-are-useful-screenrc-settings
-hardstatus alwayslastline '%{= kg}[ %{B}%H %{g}%h%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+# [ %H %h %=            %-Lw (%n*%f %t) %+Lw             %= ][ %m/%d %c ]
+# %H hostname of the system
+# %h hardstatus
+# %l current load of the system
+# %= fill
+# %L= truncate
+# %-Lw window number and names, up to the current one
+# %+Lw starting with the window after the current one
+# %n window number
+# %f flag of the window
+# %t window title
+# %m month
+# %d day
+# %c current time HH:MM in 24h format
+# %u users
+# %{-} pops one level of color-change stack
+# %{= kg} green on black
+# %{B} bright blue
+# %{g} green
+# %{w} white
+# %{r} red
+# %{W} bright white
+# must set/reset color before/after %=, and have something (whitespace) before/after %-Lw...%+Lw
+hardstatus alwayslastline '%{= kg}[ %{B}%H%{-} %{g}%h%{-}%{w}%= %-Lw%{r}(%{W}%n*%f %t%{-})%{-}%+Lw %=%{-}][ %{B}%m/%d%{-} %{W}%c%{-} ]'
 
 bindkey ^[[1;7C next
 bindkey ^[[1;7D prev
