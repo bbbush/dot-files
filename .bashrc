@@ -40,3 +40,19 @@ export HISTFILESIZE=
 export HISTSIZE=
 export HISTCONTROL=ignoreboth
 
+function ssh_keygen_internal_server
+{
+  if [ "$1" = "" ] || [ "$SSH_USER" = "" ]; then
+    echo "run ssh-keygen without params"
+    ssh-keygen
+  else
+    SSH_USER_HOST=$SSH_USER@$1
+    ssh-keygen -t rsa -b 4096 -C $SSH_USER_HOST -f .ssh/id_rsa_$1
+    #ssh-copy-id -i .ssh/id_rsa_$1 $SSH_USER_HOST
+  fi
+}
+
+alias ssh-keygen=ssh_keygen_internal_server
+
+# vim: set ai expandtab sw=2:
+
