@@ -35,6 +35,7 @@ PROMPT_COMMAND="echo -n -e \"\033k\033\0134\"; $PROMPT_COMMAND"
 
 unset LC_ALL
 
+export EDITOR=vim
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTCONTROL=ignoreboth
