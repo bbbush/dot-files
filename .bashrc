@@ -9,7 +9,7 @@ fi
 alias screen='screen -U -D -RR -t "\$ |" irssi'
 alias emacs='emacs -nw'
 alias start='xdg-open'
-alias xfreerdp='xfreerdp -0 -f -d msdomain1 -u byuan -x b -z --plugin cliprdr --rfx --composition --ntlm 2'
+alias xfreerdp='xfreerdp -0 -g 1280x900 -d msdomain1 -u byuan -x b -z --plugin cliprdr --rfx --composition --ntlm 2'
 
 C_NONE="\[\033[m\]"
 C_RED="\[\033[1;31m\]"
