@@ -7,3 +7,5 @@
 	user = bbbush
 [push]
 	default = simple
+[credential]
+	helper = cache --timeout=3600
