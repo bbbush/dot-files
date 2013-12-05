@@ -209,6 +209,9 @@ function print_tty_title {
   PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
 
 export EDITOR='"$PROGRAMFILES/Vim/vim74/gvim.exe"'
+alias mvn='"$PROGRAMFILES/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven_311/bin/mvn"'
+alias msbuild35='"$WINDIR/Microsoft.NET/Framework/v3.5/msbuild.exe"'
+alias msbuild40='"$WINDIR/Microsoft.NET/Framework/v4.0.30319/msbuild.exe"'
 alias vi=$EDITOR
 alias git='/opt/Git/cmd/git.exe'
 alias chocolatey='/opt/chocolatey/bin/chocolatey.bat'
