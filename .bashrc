@@ -226,8 +226,8 @@ function ssh_keygen_internal_server
     ssh-keygen
   else
     SSH_USER_HOST=msdomain1\\byuan@$1
-    ssh-keygen -t rsa -b 4096 -C $SSH_USER_HOST -f .ssh/id_rsa_$1
-    #ssh-copy-id -i .ssh/id_rsa_$1 $SSH_USER_HOST
+    ssh-keygen -t rsa -b 4096 -C $SSH_USER_HOST -f ~/.ssh/id_rsa_$1
+    #ssh-copy-id -i ~/.ssh/id_rsa_$1 $SSH_USER_HOST
   fi
 }
 
