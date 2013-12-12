@@ -31,6 +31,7 @@ vbell off
 # must set/reset color before/after %=, and have something (whitespace) before/after %-Lw...%+Lw
 hardstatus alwayslastline '%{= kg}[ %{B}%H%{-} %{g}%h%{-}%{w}%= %-Lw%{r}(%{W}%n*%f %t%{-})%{-}%+Lw %=%{-}][ %{B}%m/%d%{-} %{W}%c%{-} ]'
 
-bindkey ^[[1;7C next
-bindkey ^[[1;7D prev
+# Ctrl: 5, Alt: 3, Ctrl-Alt: 7, Shift: 2, Ctrl-Shift: 6, Alt-Shift: 4, Ctrl-Alt-Shift: 8
+bindkey ^[[1;5C next
+bindkey ^[[1;5D prev
 
