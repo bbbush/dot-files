@@ -7,6 +7,6 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/bin
+PATH=~/Downloads/android-sdk-linux/platform-tools:~/Downloads/android-sdk-linux/tools:$PATH:$HOME/bin
 
 export PATH
