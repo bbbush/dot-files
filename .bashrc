@@ -218,6 +218,7 @@ alias chocolatey='/opt/chocolatey/bin/chocolatey.bat'
 alias start=cygstart
 alias screen='screen -D -R -R'
 alias l.='ls -Ad .*'
+alias fish='PATH=/usr/local/bin:/usr/bin:/opt/Git/cmd fish'
 
 function ssh_keygen_internal_server
 {
