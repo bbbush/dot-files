@@ -17,6 +17,7 @@
 	ignorecase = true
 	filemode = false
 	whitespace = trailing-space,space-before-tab
+	excludesfile = C:\\Users\\byuan\\Documents\\gitignore_global.txt
 [apply]
 	whitespace = fix
 [gui]
