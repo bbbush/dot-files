@@ -209,16 +209,17 @@ function print_tty_title {
   PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
 
 export EDITOR='"$PROGRAMFILES/Vim/vim74/gvim.exe"'
-alias mvn='"$PROGRAMFILES/Jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven_311/bin/mvn"'
-alias msbuild35='"$WINDIR/Microsoft.NET/Framework/v3.5/msbuild.exe"'
-alias msbuild40='"$WINDIR/Microsoft.NET/Framework/v4.0.30319/msbuild.exe"'
 alias vi=$EDITOR
 alias git='/opt/Git/cmd/git.exe'
-alias chocolatey='/opt/chocolatey/bin/chocolatey.bat'
+#alias chocolatey='/opt/chocolatey/bin/chocolatey.bat'
 alias start=cygstart
+alias showimage=cygstart
 alias screen='screen -D -R -R'
 alias l.='ls -Ad .*'
 alias fish='PATH=/usr/local/bin:/usr/bin:/opt/Git/cmd fish'
+alias rustc='/opt/Rust/20150112/bin/rustc'
+#alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
+alias nuget='/cygdrive/d/byuan/test/NuGet-Signed.exe'
 
 function ssh_keygen_internal_server
 {
