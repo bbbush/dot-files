@@ -56,3 +56,5 @@
 		fi; \
 	done; \
 	}; _"
+[url "https://"]
+	insteadOf = git://
