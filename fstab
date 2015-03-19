@@ -7,4 +7,4 @@
 none /cygdrive cygdrive binary,noacl,posix=0,user 0 0
 
 C:\Users /home none bind,binary,noacl,posix=0,user 0 0
-C:\Windows\Temp /tmp none bind,binary,noacl,posix=0,user 0 0
+C:\Windows\Temp /tmp none bind,binary,noacl,posix=0,user,fmask=0022,dmask=0000 0 0
