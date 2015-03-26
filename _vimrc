@@ -23,13 +23,14 @@ endif
 
 " Some common setup
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
+if has('gui_running')
+  source $VIMRUNTIME/vimrc_example.vim
+  source $VIMRUNTIME/mswin.vim
+  behave mswin
+endif
 
 " Personal flavor
 set ai
-filetype indent on
 set nu tw=78 sw=2 ts=4
 " set et  " expandtab when hit 'Tab' key, should set in individual files
 set wildmenu
@@ -46,6 +47,7 @@ if !has('gui_running')
     nmap <F10>      :emenu <C-Z>
     imap <F10> <C-O>:emenu <C-Z>
   endif
+  set t_Co=256
 endif
 
 " GUI settings
@@ -60,6 +62,7 @@ if has('gui_running')
   if has("win32")
     let g:visual_studio_python_exe = "D:/Python25/pythonw.exe"
   endif
+  filetype indent on
 endif
 
 " Set British spelling convention for International English

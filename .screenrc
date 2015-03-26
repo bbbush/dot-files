@@ -5,6 +5,13 @@ shelltitle "$ |bash"
 startup_message off
 vbell off
 
+# http://www.stackoverflow.com/questions/15375992/vim-difference-between-t-co-256-and-term-xterm-256color-in-conjunction-with-tmu
+term "screen-256color"
+# enable 256color support http://robotsrule.us/vim/
+#attrcolor b ".I"
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
+#defbce "on"
+
 # http://serverfault.com/questions/3740/what-are-useful-screenrc-settings
 # [ %H %h %=            %-Lw (%n*%f %t) %+Lw             %= ][ %m/%d %c ]
 # %H hostname of the system
