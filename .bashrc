@@ -220,6 +220,9 @@ alias fish='PATH=/usr/local/bin:/usr/bin:/opt/Git/cmd fish'
 alias rustc='/opt/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
 alias nuget='/cygdrive/d/byuan/test/NuGet-Signed.exe'
+if [ "$ProgramW6432" != "" ]; then
+  alias subl='"$ProgramW6432/Sublime Text 3/subl"'
+fi
 
 function ssh_keygen_internal_server
 {
