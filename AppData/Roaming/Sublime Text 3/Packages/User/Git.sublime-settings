@@ -1,0 +1,7 @@
+{
+  // save before running commands
+  "save_first": true,
+
+  // if present, use this command instead of plain "git"
+  "git_command": "%ProgramFiles(Opt)%/Git/cmd/git.exe"
+}
