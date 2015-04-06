@@ -11,7 +11,7 @@
 [push]
 	default = simple
 [credential]
-	helper = !'git-credential-winstore.exe'
+	helper = !'C:\\Users\\byuan\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
 [core]
 	autocrlf = true
 	ignorecase = true
@@ -58,3 +58,5 @@
 	}; _"
 [url "https://"]
 	insteadOf = git://
+[http]
+	sslCAInfo = C:/Users/byuan/curl-ca-bundle.crt
