@@ -104,7 +104,19 @@ endif
 
 " plugins https://github.com/tpope/vim-pathogen
 if has('gui_running')
+  set nocompatible
+  filetype off
   execute pathogen#infect()
+
+" Vundle.vim plugins https://github.com/gmarik/Vundle.vim
+  set nocompatible
+  filetype off
+  call vundle#begin()
+  " let Vundle manage Vundle, required
+  Plugin 'gmarik/Vundle.vim'
+  call vundle#end()
+
+" required after plugin settings
   syntax on
   filetype plugin indent on
 endif
