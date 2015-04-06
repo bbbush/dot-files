@@ -210,7 +210,6 @@ function print_tty_title {
 
 export EDITOR='"$PROGRAMFILES/Vim/vim74/gvim.exe"'
 alias vi=$EDITOR
-alias git='/opt/Git/cmd/git.exe'
 #alias chocolatey='/opt/chocolatey/bin/chocolatey.bat'
 alias start=cygstart
 alias showimage=cygstart

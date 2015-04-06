@@ -11,13 +11,13 @@
 [push]
 	default = simple
 [credential]
-	helper = !'c:/cygwin/opt/Git/cmd/git-credential-winstore.exe'
+	helper = !'git-credential-winstore.exe'
 [core]
 	autocrlf = true
 	ignorecase = true
 	filemode = false
 	whitespace = trailing-space,space-before-tab
-	excludesfile = C:\\Users\\byuan\\Documents\\gitignore_global.txt
+	excludesfile = '~/.gitignore_global'
 [apply]
 	whitespace = fix
 [gui]
