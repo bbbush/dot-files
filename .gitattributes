@@ -10,8 +10,7 @@
 *.gitconfig text eol=lf
 *.gitignore text eol=lf
 *.sh     text eol=lf
-*.bash_profile  text eol=lf
-*.bashrc text eol=lf
+*.bash* text eol=lf
 *.profile text eol=lf
 *.screenrc text eol=lf
 _vimrc text eol=lf
