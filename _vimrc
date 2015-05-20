@@ -132,3 +132,4 @@ if has('gui_running')
   "autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 endif
 
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
