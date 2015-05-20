@@ -26,15 +26,26 @@
 [alias]
   new = "!_() { git log $1@{1}..$1@{0} \"$@\"; }; _"
   k = "!_() { gitk \"$@\"; }; _"
+  exists = "!_() { \
+	git rev-parse --verify -q $1 > /dev/null; \
+	}; _"
   psbin = "!_() { \
-	if [ -z \"$1\" ]; then \
-		echo \"missing remote branch name\"; \
-		exit; \
+	if ! b=$(git symbolic-ref --short -q HEAD); then b=$1; fi; \
+	if ! git exists psbin/$b; then git fetch psbin; fi; \
+	if ! git exists psbin/$b; then b=master; fi; \
+	git overwrite psbin/$b; \
+	git overwrite psbin/$b.labels; \
+	git overwrite psbin/$b.config; \
+	git dllx; \
+	}; _"
+  overwrite = "!_() { \
+	if git exists $1; then \
+		git archive $1 | tar xf -; \
+	else \
+		>&2 echo branch $1 does not exist; \
 	fi; \
-	git fetch psbin; \
-	git archive psbin/$1 | tar xf -; \
-	git archive psbin/$1.labels | tar xf -; \
-	git archive psbin/$1.config | tar xf -; \
+	}; _"
+  dllx = "!_() { \
 	find . -type f -a \\( -name *.dll -o -name *.exe \\) -print0 | \
 	xargs -0 chmod +x; \
 	}; _"
