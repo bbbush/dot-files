@@ -34,8 +34,6 @@
 	if ! git exists psbin/$b; then git fetch psbin; fi; \
 	if ! git exists psbin/$b; then b=$1; fi; \
 	git overwrite psbin/$b; \
-	git overwrite psbin/$b.labels; \
-	git overwrite psbin/$b.config; \
 	git dllx; \
 	}; _"
   overwrite = "!_() { \
