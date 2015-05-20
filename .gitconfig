@@ -32,7 +32,7 @@
   psbin = "!_() { \
 	if ! b=$(git symbolic-ref --short -q HEAD); then b=$1; fi; \
 	if ! git exists psbin/$b; then git fetch psbin; fi; \
-	if ! git exists psbin/$b; then b=master; fi; \
+	if ! git exists psbin/$b; then b=$1; fi; \
 	git overwrite psbin/$b; \
 	git overwrite psbin/$b.labels; \
 	git overwrite psbin/$b.config; \
