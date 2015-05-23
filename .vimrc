@@ -7,6 +7,40 @@ execute pathogen#infect()
 filetype off                  " again
 call vundle#begin('~/.vim/vundle')
 Plugin 'gmarik/Vundle.vim'    " let Vundle manage Vundle, required
+Plugin 'bling/vim-airline'
+set laststatus =2
+let g:airline#extensions#tabline#enabled = 1
+
+Plugin 'edkolev/promptline.vim'
+Plugin 'ervandew/eclim'
+Plugin 'kien/ctrlp.vim'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+Plugin 'majutsushi/tagbar'
+Plugin 'myint/syntastic-extras'
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'powerline/fonts'
+let g:airline_powerline_fonts = 1
+
+Plugin 'rust-lang/rust.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+"Plugin 'sickill/vim-monokai'
+Plugin 'tomasr/molokai'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+Plugin 'venantius/vim-eastwood'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-shell'
+
 " All of your Plugins must be added before the following line
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -18,6 +52,11 @@ set ai
 set nu tw=78 sw=2 ts=4
 set wildmenu
 set list listchars=trail:',tab:»'
+
+if has('gui_running')
+  colorscheme molokai
+  set guifont=Liberation\ Mono\ for\ Powerline
+endif
 
 " Key mappings to make Home go to first non-blank column or first column
 nnoremap <silent> <Home>      :call GoToFirstNonBlankOrFirstColumn()<CR>
