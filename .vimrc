@@ -1,6 +1,19 @@
-set nocompatible
+" first setup pathogen and Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" let pathogen take care of bundle folder
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+filetype off                  " again
+call vundle#begin('~/.vim/vundle')
+Plugin 'gmarik/Vundle.vim'    " let Vundle manage Vundle, required
+" All of your Plugins must be added before the following line
+call vundle#end()             " required
+filetype plugin indent on     " required
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 set ai
-filetype indent on
 " set et  " expandtab when hit 'Tab' key, should set in individual files
 set nu tw=78 sw=2 ts=4
 set wildmenu
@@ -30,6 +43,4 @@ func! GoToFirstNonBlankOrFirstColumn()
     normal! 0
   endif
 endfunc
-
-nmap <F10> <Esc> <Esc> :w <CR> :!make && ./a.out <CR>
 
