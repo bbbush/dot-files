@@ -54,7 +54,7 @@ endif
 if has('gui_running')
   " Always show file types in menu
   let do_syntax_sel_menu=1
-  set guifont=Luxi_Mono:h10
+  set guifont=DejaVu_Sans_Mono_for_Powerline:cANSI
   set lines=35
   set columns=120
   set guioptions-=T
@@ -111,9 +111,21 @@ if has('gui_running')
 " Vundle.vim plugins https://github.com/gmarik/Vundle.vim
   set nocompatible
   filetype off
-  call vundle#begin()
+  call vundle#begin("~/vimfiles/vundle")
   " let Vundle manage Vundle, required
   Plugin 'gmarik/Vundle.vim'
+  " Plugin 'belluzj/fantasque-sans'
+  " Plugin 'bling/minivimrc'
+  " Plugin 'bling/vim-airline'
+  " Plugin 'edkolev/promptline.vim'
+  " Plugin 'einars/js-beautify'
+  " Plugin 'kien/ctrlp.vim'
+  " Plugin 'powerline/fonts'
+  " Plugin 'scrooloose/nerdtree'
+  " Plugin 'scrooloose/syntastic'
+  " Plugin 'tpope/vim-sensible'
+  " Plugin 'tpope/vim-fugitive'
+  " Plugin 'xolox/vim-misc'
   call vundle#end()
 
 " required after plugin settings
@@ -133,3 +145,12 @@ if has('gui_running')
 endif
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
