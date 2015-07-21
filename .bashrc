@@ -208,7 +208,7 @@ function print_tty_title {
 [ "$TERM" = "screen" ] &&
   PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
 
-export EDITOR='"$PROGRAMFILES/Vim/vim74/gvim.exe"'
+export EDITOR='"D:/Program Files (x86)/Vim/vim74/gvim.exe"'
 alias vi=$EDITOR
 #alias chocolatey='/opt/chocolatey/bin/chocolatey.bat'
 alias start=cygstart
