@@ -1,5 +1,0 @@
-{
-  "command": "%ProgramFiles(Opt)%/ctags-5.8/ctags.exe",
-
-  "opts": ["--exclude=@.ctagsignore"]
-}

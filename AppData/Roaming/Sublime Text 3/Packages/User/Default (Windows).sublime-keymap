@@ -1,7 +1,0 @@
-[{ "keys": ["ctrl+k", "ctrl+f"], "command": "js_format" },
- { "keys": ["ctrl+e", "ctrl+c"], "command": "reindent", "contaxt":
-   [
-     { "key": "syntax", "operator": "equal", "operand": "html" },
-   ]
-  },
-]
