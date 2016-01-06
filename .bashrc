@@ -208,8 +208,10 @@ function print_tty_title {
 [ "$TERM" = "screen" ] &&
   PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
 
-export EDITOR='"D:/Program Files (x86)/Vim/vim74/gvim.exe"'
-alias vi=$EDITOR
+export vi='"D:/Program Files (x86)/Vim/vim74/gvim.exe"'
+export EDITOR=$vi
+alias vi=$vi
+alias subl='"D:/Program Files/Sublime Text 3/subl"'
 #alias chocolatey='/opt/chocolatey/bin/chocolatey.bat'
 alias start=cygstart
 alias showimage=cygstart
@@ -218,10 +220,7 @@ alias l.='ls -Ad .*'
 alias fish='PATH=/usr/local/bin:/usr/bin:/opt/Git/cmd fish'
 alias rustc='/opt/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
-alias nuget='/cygdrive/d/byuan/test/NuGet-Signed.exe'
-if [ "$ProgramW6432" != "" ]; then
-  alias subl='"$ProgramW6432/Sublime Text 3/subl"'
-fi
+alias nuget='/cygdrive/d/byuan/test/nuget.exe'
 
 function ssh_keygen_internal_server
 {
