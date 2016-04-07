@@ -10,8 +10,6 @@
 	user = bbbush
 [push]
 	default = simple
-[credential]
-	#helper = manager
 [core]
 	#autocrlf = true
 	ignorecase = true
@@ -67,3 +65,5 @@
 	}; _"
 [url "https://"]
 	insteadOf = git://
+[credential]
+	helper = cache
