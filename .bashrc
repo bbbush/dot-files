@@ -10,3 +10,4 @@ export HISTFILESIZE=
 export HISTSIZE=
 export HISTCONTROL=ignoreboth
 
+[[ -f /etc/bash_completion ]] && . /etc/bash_completion
