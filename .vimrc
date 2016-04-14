@@ -101,7 +101,7 @@ if 1
   " Plugin 'bling/vim-airline'
   " Plugin 'edkolev/promptline.vim'
   " Plugin 'einars/js-beautify'
-  Plugin 'kien/ctrlp.vim'
+  Plugin 'ctrlpvim/ctrlp.vim'
   " Plugin 'powerline/fonts'
   " Plugin 'scrooloose/nerdtree'
   " Plugin 'scrooloose/syntastic'
@@ -136,8 +136,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 set wildignore+=*\\tmp\\*,*.so,*.a,*.o
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
+  \ 'file': '\vtags|(\.(exe|so|dll|gch|a|out))$',
+  \ 'link': '',
   \ }
-let g:ctrlp_user_command='find %s -type f'
+"let g:ctrlp_user_command='find %s -type f'
