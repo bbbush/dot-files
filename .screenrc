@@ -6,7 +6,7 @@ startup_message off
 vbell off
 
 # http://www.stackoverflow.com/questions/15375992/vim-difference-between-t-co-256-and-term-xterm-256color-in-conjunction-with-tmu
-term "screen-256color"
+# term "screen-256color"
 # enable 256color support http://robotsrule.us/vim/
 #attrcolor b ".I"
 #termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
