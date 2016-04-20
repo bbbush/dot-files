@@ -7,8 +7,11 @@ if v:version < 700
   quit
 endif
 
+set nocompatible
+ru vimrc_example.vim
+
 " Personal flavor
-set ai
+set ic
 set nu tw=78 sw=2 ts=4
 " set et  " expandtab when hit 'Tab' key, should set in individual files
 set dir=/tmp,. " for different environment
@@ -27,11 +30,9 @@ if has('gui_running')
   if has("win32")
     let g:visual_studio_python_exe = "D:/Python25/pythonw.exe"
   endif
-  filetype indent on
 else
   set t_Co=256
   colorscheme darkblue
-  set mouse=a
   set nofoldenable
   set foldmethod=indent
   if has('autocmd')
@@ -46,16 +47,13 @@ else
   endif
 endif
 
-" Set British spelling convention for International English
-if has('syntax')
-  set spelllang=en_gb
+" fix <Home> mapping
+if $TERM =~ '^xterm'
+  map <Esc>[1~ <Home>
+  map! <Esc>[1~ <Home>
+  map <Esc>[4~ <End>
+  map! <Esc>[4~ <End>
 endif
-
-" Key mappings to ease browsing long lines
-noremap  <C-J>         gj
-noremap  <C-K>         gk
-inoremap <M-Home> <C-O>g0
-inoremap <M-End>  <C-O>g$
 
 " Complex Key mappings, etc.
 if has('eval')
@@ -70,28 +68,18 @@ if has('eval')
   endfunction
 
   " Key mappings to make Home go to first non-blank column or first column
-  nnoremap <silent> <Home>      :call GoToFirstNonBlankOrFirstColumn()<CR>
-  inoremap <silent> <Home> <C-O>:call GoToFirstNonBlankOrFirstColumn()<CR>
+  nn<silent> <Home>      :call GoToFirstNonBlankOrFirstColumn()<CR>
+  ino<silent> <Home> <C-O>:call GoToFirstNonBlankOrFirstColumn()<CR>
 
-    " Function to insert the current date
-  function! InsertCurrentDate()
-    let curr_date=strftime('%Y-%m-%d', localtime())
-    silent! exec 'normal! gi' .  curr_date . "\<ESC>l"
-  endfunction
-
-  " Key mapping to insert the current date
-  inoremap <silent> <C-\><C-D> <C-O>:call InsertCurrentDate()<CR>
 endif
 
-if 1
-" plugins https://github.com/tpope/vim-pathogen
-  set nocompatible
+if has('autocmd')
+  " plugins https://github.com/tpope/vim-pathogen
   filetype off
   execute pathogen#infect()
 
   if 1
-" Vundle.vim plugins https://github.com/gmarik/Vundle.vim
-  set nocompatible
+  " Vundle.vim plugins https://github.com/gmarik/Vundle.vim
   filetype off
   call vundle#begin("~/.vim/vundle")
   " let Vundle manage Vundle, required
@@ -117,13 +105,13 @@ if 1
   call vundle#end()
   endif
 
-" required after plugin settings
+  " required after plugin settings
   syntax on
   filetype plugin indent on
 endif
 
 " config vim-jsbeautify https://github.com/maksimr/vim-jsbeautify
-if has('gui_running')
+if has('autocmd')
   "map <c-f> :call JsBeautify()<cr>
   autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
   autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
