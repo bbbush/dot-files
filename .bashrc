@@ -23,5 +23,5 @@ function print_tty_title {
   echo -n '\[\e]0;'"$@"'\a\]'
 }
 
-[ "$TERM" = "screen" ] &&
-  PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
+#[ "$TERM" = "screen" ] &&
+#  PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
