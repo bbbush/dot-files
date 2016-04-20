@@ -109,7 +109,7 @@ if 1
   Plugin 'tpope/vim-sensible'
   Plugin 'tpope/vim-fugitive'
   Plugin 'xolox/vim-misc'
-  Plugin 'Valloric/YouCompleteMe'
+  "Plugin 'Valloric/YouCompleteMe'
   " from jxie1
   "Plugin 'octol/vim-cpp-enhanced-highlight' " highlighting for c++11/14
   "Plugin 'Mizuchi/STL-Syntax' " improved c++11/14 STL highlighting
