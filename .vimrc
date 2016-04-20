@@ -96,18 +96,20 @@ if 1
   call vundle#begin("~/.vim/vundle")
   " let Vundle manage Vundle, required
   Plugin 'gmarik/Vundle.vim'
-  " Plugin 'belluzj/fantasque-sans'
+  Plugin 'belluzj/fantasque-sans'
   Plugin 'bling/minivimrc'
-  " Plugin 'bling/vim-airline'
-  " Plugin 'edkolev/promptline.vim'
+  Plugin 'vim-airline/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'edkolev/promptline.vim'
   " Plugin 'einars/js-beautify'
   Plugin 'ctrlpvim/ctrlp.vim'
-  " Plugin 'powerline/fonts'
-  " Plugin 'scrooloose/nerdtree'
+  Plugin 'powerline/fonts'
+  Plugin 'scrooloose/nerdtree'
   " Plugin 'scrooloose/syntastic'
   Plugin 'tpope/vim-sensible'
   Plugin 'tpope/vim-fugitive'
   Plugin 'xolox/vim-misc'
+  Plugin 'Valloric/YouCompleteMe'
   " from jxie1
   "Plugin 'octol/vim-cpp-enhanced-highlight' " highlighting for c++11/14
   "Plugin 'Mizuchi/STL-Syntax' " improved c++11/14 STL highlighting
@@ -133,7 +135,7 @@ endif
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 set wildignore+=*\\tmp\\*,*.so,*.a,*.o
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
