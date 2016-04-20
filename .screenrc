@@ -4,6 +4,7 @@ shell bash
 shelltitle "$ |bash"
 startup_message off
 vbell off
+altscreen on
 
 # http://www.stackoverflow.com/questions/15375992/vim-difference-between-t-co-256-and-term-xterm-256color-in-conjunction-with-tmu
 # term "screen-256color"
