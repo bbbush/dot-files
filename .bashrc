@@ -10,7 +10,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 export HISTCONTROL=ignoreboth
 
-alias vim='TERM=xterm-256color /opt/vim-7.4/bin/vim'
+alias vim='/opt/vim-7.4/bin/vim'
 alias screen='screen -D -R -R'
 
 [[ -f /etc/bash_completion ]] && . /etc/bash_completion

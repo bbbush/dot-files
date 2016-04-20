@@ -1,10 +1,9 @@
 BoldAsFont=-1
-#Font=Anonymice Powerline
-#Font=DejaVu Sans Mono for Powerline
 Font=Sauce Code Powerline
-#FontSize=12
 FontHeight=12
 RowSpacing=2
-Term=xterm
+Term=xterm-256color
 Scrollbar=none
-
+Transparency=low
+OpaqueWhenFocused=yes
+CursorType=block
