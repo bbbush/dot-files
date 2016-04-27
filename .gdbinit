@@ -5,10 +5,10 @@ set history save
 # always save to the same file so it would not write everywhere
 set history filename ~/.gdb_history
 # does not understand "unlimited" in gdb 5.x?
-set history size 10000
+set history size 1000000
 # remove-duplicates is not supported in gdb 5.x?
 #set history remove-duplicates unlimited
-# no idea
-set history expansion on
-#set history on
+# "History expansion assigns special meaning to the character !"
+# ftp://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_182.html
+#set history expansion on
 
