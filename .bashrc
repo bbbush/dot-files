@@ -12,6 +12,7 @@ export HISTCONTROL=ignoreboth
 
 alias vim='/opt/vim-7.4/bin/vim'
 alias screen='screen -D -R -R'
+alias gdb='(unset HISTSIZE; gdb)'
 
 [[ -f /etc/bash_completion ]] && . /etc/bash_completion
 
