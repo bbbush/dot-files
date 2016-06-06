@@ -1,3 +1,14 @@
 # vim: set syntax=sh:
-[[ -f ~/git-completion.bash ]] && . ~/git-completion.bash
-[[ -f ~/git-prompt.sh ]] && . ~/git-prompt.sh
+
+pushd () {
+    command pushd "$@" > /dev/null
+}
+
+popd () {
+    command popd "$@" > /dev/null
+}
+
+pushd "$(dirname $(which git))/../mingw64/share/git/completion"
+[[ -f git-completion.bash ]] && . git-completion.bash
+[[ -f git-prompt.sh ]] && . git-prompt.sh
+popd
