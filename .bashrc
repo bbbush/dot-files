@@ -209,7 +209,7 @@ function print_tty_title {
 [ "$TERM" = "screen" ] &&
   PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
 
-export vi='"D:/Program Files (x86)/Vim/vim74/gvim.exe"'
+export vi='"D:/Program Files (x86)/Vim/vim80/gvim.exe"'
 export EDITOR=$vi
 alias vi=$vi
 alias subl='"D:/Program Files/Sublime Text 3/subl"'
