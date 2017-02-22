@@ -67,3 +67,5 @@
 	}; _"
 [url "https://"]
 	insteadOf = git://
+[commit]
+	verbose = true
