@@ -223,6 +223,7 @@ alias rustc='/opt/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
 alias nuget='/cygdrive/d/byuan/test/nuget.exe'
 alias mvn='JAVA_HOME="D:/Program Files/Java/jdk1.8.0_121" D:/cygwin/Opt/apache-maven-3.3.9/bin/mvn'
+alias winpty='/opt/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 
 function ssh_keygen_internal_server
 {
