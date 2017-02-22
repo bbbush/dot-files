@@ -222,6 +222,7 @@ alias fish='PATH=/usr/local/bin:/usr/bin:/opt/Git/cmd fish'
 alias rustc='/opt/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
 alias nuget='/cygdrive/d/byuan/test/nuget.exe'
+alias mvn='JAVA_HOME="D:/Program Files/Java/jdk1.8.0_121" D:/cygwin/Opt/apache-maven-3.3.9/bin/mvn'
 
 function ssh_keygen_internal_server
 {
