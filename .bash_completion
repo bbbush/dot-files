@@ -12,3 +12,5 @@ pushd "$(dirname $(which git))/../mingw64/share/git/completion"
 [[ -f git-completion.bash ]] && . git-completion.bash
 [[ -f git-prompt.sh ]] && . git-prompt.sh
 popd
+
+aws_bash_completer || :
