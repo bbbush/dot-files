@@ -223,7 +223,7 @@ alias rustc='/opt/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
 alias nuget='/opt/NuGet/nuget.exe'
 alias mvn='JAVA_HOME="D:/Program Files/Java/jdk1.8.0_121" \
-  /opt/apache-maven-3.5.0/bin/mvn'
+  /opt/apache-maven-3/bin/mvn'
 alias winpty='/opt/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 alias pip='winpty python -m pip'
 alias aws='winpty python -m awscli'
