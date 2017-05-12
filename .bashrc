@@ -224,6 +224,7 @@ alias rustc='/opt/Rust/20150112/bin/rustc'
 alias nuget='/opt/NuGet/nuget.exe'
 alias mvn='JAVA_HOME="D:/Program Files/Java/jdk1.8.0_131" \
   /opt/apache-maven-3/bin/mvn'
+alias avro-tools='java -jar D:/cygwin/opt/apache-avro-1.8/avro-tools-1.8.1.jar'
 alias winpty='/opt/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 alias pip='winpty python -m pip'
 alias aws='winpty python -m awscli'
