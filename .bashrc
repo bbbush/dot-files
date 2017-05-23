@@ -228,6 +228,7 @@ alias avro-tools='java -jar D:/cygwin/opt/apache-avro-1.8/avro-tools-1.8.1.jar'
 alias winpty='/opt/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 alias pip='winpty python -m pip'
 alias aws='winpty python -m awscli'
+alias 7z='"D:/Program Files/7-zip/7z"'
 
 function ssh_keygen_internal_server
 {
