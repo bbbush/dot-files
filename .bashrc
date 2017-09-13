@@ -231,6 +231,7 @@ alias pip='python -m pip'
 alias aws='python -m awscli'
 alias 7z='"D:/Program Files/7-zip/7z"'
 alias redis-cli='/opt/redis-3-x64/redis-cli -c'
+alias tf='/Opt/terraform-0.10-x64/terraform.exe'
 
 function ssh_keygen_internal_server
 {
