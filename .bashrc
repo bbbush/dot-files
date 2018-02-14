@@ -224,9 +224,9 @@ alias fish='PATH=/usr/local/bin:/usr/bin:$OPT/Git/cmd fish'
 alias rustc='$OPT/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
 alias nuget='$OPT/NuGet/nuget.exe'
-alias mvn='JAVA_HOME="D:/Program Files/Java/jdk1.8.0_144" \
+alias mvn='JAVA_HOME="D:/Program Files/Java/jdk1.8.0_162" \
   $OPT/apache-maven-3/bin/mvn'
-alias jconsole='"D:/Program Files/Java/jdk1.8.0_144/bin/jconsole"'
+alias jconsole='"D:/Program Files/Java/jdk1.8.0_162/bin/jconsole"'
 alias avro-tools='java -jar D:/cygwin/opt/apache-avro-1.8/avro-tools-1.8.1.jar'
 #alias winpty='$OPT/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 alias pip='python -m pip'
