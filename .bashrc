@@ -211,7 +211,7 @@ function print_tty_title {
 
 OPT=/d/cygwin/Opt
 
-export vi='"D:/Program Files (x86)/Vim/vim80/gvim.exe"'
+export vi='"D:/Program Files/Vim/vim80/gvim.exe"'
 export EDITOR=$vi
 alias vi=$vi
 alias subl='"D:/Program Files/Sublime Text 3/subl"'
@@ -233,7 +233,8 @@ alias pip='python -m pip'
 alias aws='python -m awscli'
 alias 7z='"D:/Program Files/7-zip/7z"'
 alias redis-cli='$OPT/redis-3-x64/redis-cli -c'
-alias tf='/Opt/terraform-0.10-x64/terraform.exe'
+alias tf='$OPT/terraform-0.11-x64/terraform.exe'
+alias jq='$OPT/jq-1.5-x64/jq-win64.exe'
 
 function ssh_keygen_internal_server
 {
