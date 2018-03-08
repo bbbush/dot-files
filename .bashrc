@@ -238,6 +238,7 @@ alias jq='$OPT/jq-1.5-x64/jq-win64.exe'
 alias mc='winpty $OPT/minikube-x64/minikube-windows-amd64.exe'
 alias kc='$OPT/kubernetes-client-x64/kubectl.exe'
 alias kubefed='$OPT/kubernetes-client-x64/kubefed.exe'
+alias pr='git pr'
 
 function ssh_keygen_internal_server
 {
