@@ -64,7 +64,10 @@
 	done; \
 	}; _"
   pr = "!_() { \
-    git fetch origin refs/pull-requests/\"$1\"/from; \
+	git pull origin refs/pull-requests/\"$1\"/from; \
+  }; _"
+  fetch-pr ="!_() {\
+	git fetch origin refs/pull-requests/\"$1\"/from; \
   }; _"
 [url "https://"]
 	insteadOf = git://
