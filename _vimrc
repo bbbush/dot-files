@@ -54,13 +54,17 @@ endif
 if has('gui_running')
   " Always show file types in menu
   let do_syntax_sel_menu=1
-  set guifont=DejaVu_Sans_Mono_for_Powerline:cANSI
+  "set guifont=DejaVu_Sans_Mono_for_Powerline:h10
+  set guifont=Fira_Code_Retina:h10
+  "set guifont=Noto_Mono_for_Powerline:h10
   set lines=35
   set columns=120
   set guioptions-=T
   colorscheme darkblue
   if has("win32")
     let g:visual_studio_python_exe = "D:/Python25/pythonw.exe"
+    set rop=type:directx
+    " set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
   endif
   filetype indent on
 endif
