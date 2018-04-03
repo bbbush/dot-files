@@ -239,6 +239,7 @@ alias mc='winpty $OPT/minikube-x64/minikube-windows-amd64.exe'
 alias kc='$OPT/kubernetes-client-x64/kubectl.exe'
 alias kubefed='$OPT/kubernetes-client-x64/kubefed.exe'
 alias pr='git pr'
+alias s3key='docker run --rm -i s3key'
 
 function ssh_keygen_internal_server
 {
