@@ -209,12 +209,12 @@ function print_tty_title {
 [ "$TERM" = "screen" ] &&
   PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
 
-OPT=/d/cygwin/Opt
+OPT=/c/cygwin/Opt
 
-#export vi='"D:/Program Files/Vim/vim80/gvim.exe"'
+#export vi='"C:/Program Files/Vim/vim80/gvim.exe"'
 #export EDITOR=$vi
 #alias vi=$vi
-alias subl='"D:/Program Files/Sublime Text 3/subl"'
+alias subl='"C:/Program Files/Sublime Text 3/subl"'
 #alias chocolatey='$OPT/chocolatey/bin/chocolatey.bat'
 #alias start=cygstart
 alias showimage=cygstart
@@ -224,14 +224,14 @@ alias fish='PATH=/usr/local/bin:/usr/bin:$OPT/Git/cmd fish'
 alias rustc='$OPT/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
 alias nuget='$OPT/NuGet/nuget.exe'
-alias mvn='JAVA_HOME="D:/Program Files/Java/jdk-10.0.1" \
+alias mvn='JAVA_HOME="C:/Program Files/Java/jdk-10.0.1" \
   $OPT/maven-3/bin/mvn'
-alias jconsole='"D:/Program Files/Java/jdk-10.0.1/bin/jconsole"'
-alias avro-tools='java -jar D:/cygwin/opt/apache-avro-1.8/avro-tools-1.8.1.jar'
+alias jconsole='"C:/Program Files/Java/jdk-10.0.1/bin/jconsole"'
+alias avro-tools='java -jar C:/cygwin/opt/apache-avro-1.8/avro-tools-1.8.1.jar'
 #alias winpty='$OPT/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 alias pip='python -m pip'
 alias aws='python -m awscli'
-alias 7z='"D:/Program Files/7-zip/7z"'
+alias 7z='"C:/Program Files/7-zip/7z"'
 alias redis-cli='$OPT/redis-3-x64/redis-cli -c'
 alias tf='$OPT/terraform-0.11-x64/terraform.exe'
 alias jq='$OPT/jq-1.5-x64/jq-win64.exe'
