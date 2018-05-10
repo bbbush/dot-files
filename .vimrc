@@ -15,9 +15,14 @@ set et ts=4
 set wildmenu
 
 if has("gui_running")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 13
-    set lines=40 columns=120
-    colorscheme darkblue
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 13
+  set lines=40 columns=120
+  colorscheme darkblue
+  " copy and paste
+  vmap <C-c> "+yi
+  vmap <C-x> "+c
+  vmap <C-v> c<ESC>"+p
+  imap <C-v> <ESC>"+pa
 endif
 
 " Key mappings to make Home go to first non-blank column or first column
@@ -25,7 +30,7 @@ nnoremap <silent> <Home>      :call GoToFirstNonBlankOrFirstColumn()<CR>
 inoremap <silent> <Home> <C-O>:call GoToFirstNonBlankOrFirstColumn()<CR>
 
 augroup spec
-autocmd Filetype spec ia xdate <c-r>=GetDate()<cr> Yijun Yuan <bbbush.yuan@gmail.com> -
+  autocmd Filetype spec ia xdate <c-r>=GetDate()<cr> Yijun Yuan <bbbush.yuan@gmail.com> -
 augroup END
 
 func! GetDate()
@@ -45,3 +50,4 @@ func! GoToFirstNonBlankOrFirstColumn()
   endif
 endfunc
 
+" vim: set ai et sw=2:
