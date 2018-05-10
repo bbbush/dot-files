@@ -4,7 +4,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/vundle')
 Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
-Plugin 'wincent/command-t'
 Plugin 'vim-airline/vim-airline'
 call vundle#end()            " required
 filetype plugin indent on    " required
