@@ -5,6 +5,9 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
 # User specific aliases and functions
 alias screen='screen -U -D -RR -t "\$ |" irssi'
 alias emacs='emacs -nw'
@@ -55,4 +58,3 @@ function ssh_keygen_internal_server
 alias ssh-keygen=ssh_keygen_internal_server
 
 # vim: set ai expandtab sw=2:
-
