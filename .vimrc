@@ -1,61 +1,24 @@
-" first setup pathogen and Vundle
+" setup Vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
-" let pathogen take care of bundle folder
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-filetype off                  " again
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/vundle')
-Plugin 'gmarik/Vundle.vim'    " let Vundle manage Vundle, required
-Plugin 'bling/vim-airline'
-set laststatus =2
-let g:airline#extensions#tabline#enabled = 1
+Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
+Plugin 'wincent/command-t'
+Plugin 'vim-airline/vim-airline'
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-Plugin 'edkolev/promptline.vim'
-Plugin 'ervandew/eclim'
-Plugin 'kien/ctrlp.vim'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-
-Plugin 'majutsushi/tagbar'
-Plugin 'myint/syntastic-extras'
-Plugin 'OmniSharp/omnisharp-vim'
-Plugin 'powerline/fonts'
-let g:airline_powerline_fonts = 1
-
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-"Plugin 'sickill/vim-monokai'
-Plugin 'tomasr/molokai'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-
-Plugin 'venantius/vim-eastwood'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-Plugin 'xolox/vim-shell'
-
-" All of your Plugins must be added before the following line
-call vundle#end()             " required
-filetype plugin indent on     " required
-" see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-set ai
-" set et  " expandtab when hit 'Tab' key, should set in individual files
-set nu tw=78 sw=2 ts=4
-set wildmenu
 set list listchars=trail:',tab:»'
+let g:airline_powerline_fonts = 1
+set et ts=4
+set wildmenu
 
-if has('gui_running')
-  colorscheme molokai
-  set guifont=Liberation\ Mono\ for\ Powerline
+if has("gui_running")
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 13
+    set lines=40 columns=120
+    colorscheme darkblue
 endif
 
 " Key mappings to make Home go to first non-blank column or first column
