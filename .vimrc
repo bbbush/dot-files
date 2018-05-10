@@ -19,10 +19,12 @@ if has("gui_running")
   set lines=40 columns=120
   colorscheme darkblue
   " copy and paste
-  vmap <C-c> "+yi
-  vmap <C-x> "+c
-  vmap <C-v> c<ESC>"+p
-  imap <C-v> <ESC>"+pa
+  vnoremap <C-c> "+yi
+  vnoremap <C-x> "+c
+  vnoremap <C-v> c<ESC>"+p
+  inoremap <C-v> <ESC>"+pa
+  nnoremap <C-z> <nop>
+  inoremap <C-z> <C-o>:u<CR>
 endif
 
 " Key mappings to make Home go to first non-blank column or first column

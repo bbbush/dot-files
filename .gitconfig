@@ -11,3 +11,5 @@
 	helper = libsecret
 [alias]
 	k = "!_() { gitk \"$@\"; }; _"
+[commit]
+	verbose = true
