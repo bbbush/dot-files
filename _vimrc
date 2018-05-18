@@ -65,6 +65,7 @@ if has('gui_running')
     let g:visual_studio_python_exe = "D:/Python25/pythonw.exe"
     set rop=type:directx
     " set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
+    set shell=C:\Program\ Files\Git\bin\bash.exe
   endif
   filetype indent on
 endif
