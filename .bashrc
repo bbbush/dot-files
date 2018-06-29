@@ -253,6 +253,17 @@ function ssh_keygen_internal_server
   fi
 }
 
+function link
+{
+  # Windows needs to be told if it's a directory or not. Infer that.
+  # Also: note that we convert `/` to `\`. In this case it's necessary.
+  if [[ -d "$2" ]]; then
+    cmd <<< "mklink /D \"$1\" \"${2//\//\\}\"" > /dev/null
+  else
+    cmd <<< "mklink \"$1\" \"${2//\//\\}\"" > /dev/null
+  fi
+}
+
 alias ssh-keygen=ssh_keygen_internal_server
 export GIT_TFS_CLIENT=2008
 export HISTFILESIZE=
@@ -261,3 +272,4 @@ export HISTCONTROL=ignoreboth
 export LESS=-R
 
 # vim: set ai expandtab sw=2:
+

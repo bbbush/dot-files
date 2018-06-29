@@ -15,8 +15,8 @@
 					; byte compile if .elc exists
 (add-hook 'after-save-hook 'byte-compile-current-buffer)
 
-(add-to-list 'load-path "d:/Cygwin/opt/elisp/org-mode/lisp")
-(add-to-list 'load-path "d:/Cygwin/opt/elisp/org-mode/contrib/lisp" t)
+;(add-to-list 'load-path "d:/Cygwin/opt/elisp/org-mode/lisp")
+;(add-to-list 'load-path "d:/Cygwin/opt/elisp/org-mode/contrib/lisp" t)
 
 					; use Dropbox but not MobileOrg
 (require 'org)
@@ -57,4 +57,4 @@
  )
 
 ;(require 'cl)
-(require 'ox-confluence)
+;(require 'ox-confluence)
