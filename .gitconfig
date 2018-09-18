@@ -76,3 +76,5 @@
 [credential]
 	modalprompt = true
 	helper = manager
+[branch]
+	sort = -authordate
