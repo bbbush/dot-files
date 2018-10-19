@@ -73,8 +73,7 @@
 	insteadOf = git://
 [commit]
 	verbose = true
-[credential]
-	modalprompt = true
-	helper = manager
 [branch]
 	sort = -authordate
+[credential]
+	helper = manager
