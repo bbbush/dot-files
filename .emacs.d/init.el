@@ -1,4 +1,11 @@
 					; http://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (require 'server)
 (or (server-running-p)
     (server-start))
@@ -17,6 +24,8 @@
 
 ;(add-to-list 'load-path "d:/Cygwin/opt/elisp/org-mode/lisp")
 ;(add-to-list 'load-path "d:/Cygwin/opt/elisp/org-mode/contrib/lisp" t)
+(require 'package)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
 					; use Dropbox but not MobileOrg
 (require 'org)
@@ -48,7 +57,8 @@
  '(org-export-backends (quote (ascii odt confluence)))
  '(org-export-copy-to-kill-ring (quote if-interactive))
  '(org-export-preserve-breaks t)
- '(org-export-show-temporary-export-buffer nil))
+ '(org-export-show-temporary-export-buffer nil)
+ '(package-selected-packages (quote (org-plus-contrib))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
