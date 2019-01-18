@@ -58,7 +58,7 @@
  '(org-export-copy-to-kill-ring (quote if-interactive))
  '(org-export-preserve-breaks t)
  '(org-export-show-temporary-export-buffer nil)
- '(package-selected-packages (quote (org-plus-contrib))))
+ '(package-selected-packages (quote (org))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
