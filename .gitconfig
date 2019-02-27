@@ -78,3 +78,5 @@
 	sort = -authordate
 [credential]
 	helper = manager
+[log]
+	date = auto:human
