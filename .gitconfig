@@ -16,6 +16,7 @@
 	filemode = false
 	whitespace = trailing-space,space-before-tab
 	excludesfile = '~/.gitignore_global'
+	longpaths = true
 [apply]
 	whitespace = fix
 [gui]
