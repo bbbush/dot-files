@@ -9,7 +9,8 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias screen='screen -U -D -RR -t "\$ |" irssi'
+#alias screen='screen -U -D -RR -t "\$ |" irssi'
+alias screen='tmux attach'
 alias emacs='emacs -nw'
 alias start='xdg-open'
 alias xfreerdp='xfreerdp /size:1280x900 /d:msdomain1 /u:byuan +clipboard'
@@ -28,7 +29,7 @@ C_CYAN="\[\033[1;36m\]"
 C_WHITE="\[\033[1;37m\]"
 C_GRAY="\[\033[0;37m\]"
 C_PADDING="\[\033[0000m\]"
-[ "$PS1" = "[\u@\h \W]\\$ " ] &&
+[ "$PS1" = "[\u@\h \W]\\$ " ] && ! [[ "$TERM" =~ "dvtm" ]] &&
 PS1="$C_PADDING$C_GRAY[$C_DARKBLUE\u$C_DARKMAG@$C_GRAY\h $C_DARKBLUE\W$C_GRAY]$C_RED\\$ $C_NONE"
 
 SCREEN_TS="\[\033k\]"
@@ -56,5 +57,6 @@ function ssh_keygen_internal_server
 }
 
 alias ssh-keygen=ssh_keygen_internal_server
+alias npm="PREFIX=$HOME/.npm-modules/ npm"
 
 # vim: set ai expandtab sw=2:
