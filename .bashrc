@@ -11,6 +11,7 @@ fi
 # User specific aliases and functions
 #alias screen='screen -U -D -RR -t "\$ |" irssi'
 alias screen='tmux attach'
+alias screen='abduco -Af dvtm'
 alias emacs='emacs -nw'
 alias start='xdg-open'
 alias xfreerdp='xfreerdp /size:1280x900 /d:msdomain1 /u:byuan +clipboard'
