@@ -12,6 +12,7 @@ fi
 #alias screen='screen -U -D -RR -t "\$ |" irssi'
 alias screen='tmux attach'
 alias screen='abduco -Af dvtm'
+alias abduco='[[ "$TERM" =~ "dvtm" ]] && echo "in dvtm" || \abduco'
 alias emacs='emacs -nw'
 alias start='xdg-open'
 alias xfreerdp='xfreerdp /size:1280x900 /d:msdomain1 /u:byuan +clipboard'
