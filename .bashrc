@@ -224,10 +224,10 @@ alias fish='PATH=/usr/local/bin:/usr/bin:$OPT/Git/cmd fish'
 alias rustc='$OPT/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
 alias nuget='$OPT/NuGet/nuget.exe'
-alias mvn='JAVA_HOME="C:/Program Files/Java/jdk1.8.0_202" \
+alias mvn='JAVA_HOME="C:/Program Files/Amazon Corretto/jdk1.8.0_212" \
   $OPT/apache-maven-3/bin/mvn'
-alias java='"C:/Program Files/Java/jre1.8.0_202/bin/java"'
-alias jconsole='"C:/Program Files/Java/jdk1.8.0_202/bin/jconsole"'
+alias java='"C:/Program Files/Amazon Corretto/jdk1.8.0_212/bin/java"'
+alias jconsole='"C:/Program Files/Amazon Corretto/jdk1.8.0_212/bin/jconsole"'
 alias avro-tools='java -jar D:/cygwin/opt/apache-avro-1.8/avro-tools-1.8.1.jar'
 #alias winpty='$OPT/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 alias pip='python -m pip'
@@ -241,6 +241,7 @@ alias kc='$OPT/kubernetes-client-x64/kubectl.exe'
 alias kubefed='$OPT/kubernetes-client-x64/kubefed.exe'
 alias pr='git pr'
 alias s3key='docker run --rm -i s3key'
+alias emacs='/d/cygwin/Opt/emacs-26.2-x64/bin/emacsclient --alternate-editor="" -n'
 
 function ssh_keygen_internal_server
 {
