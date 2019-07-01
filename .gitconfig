@@ -18,6 +18,7 @@
 	excludesfile = '~/.gitignore_global'
 	longpaths = true
 	symlinks = true
+	fscache = true
 [apply]
 	whitespace = fix
 [gui]
@@ -81,3 +82,7 @@
 	helper = manager
 [log]
 	date = auto:human
+[fs]
+	cache = true
+[status]
+	submoduleSummary = false
