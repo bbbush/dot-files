@@ -209,7 +209,7 @@ function print_tty_title {
 [ "$TERM" = "screen" ] &&
   PS1="$(print_tty_title)\n$(print_screen_title)${PS1/\\n/}"
 
-OPT=/c/cygwin/Opt
+OPT=/d/cygwin/Opt
 
 export vi='"C:/Program Files (x86)/Vim/vim81/gvim.exe"'
 export EDITOR=$vi
@@ -228,7 +228,7 @@ alias mvn='JAVA_HOME="C:/Program Files/Corretto/jdk1.8.0_212" \
   $OPT/apache-maven-3/bin/mvn'
 alias java='"C:/Program Files/Corretto/jdk1.8.0_212/bin/java"'
 alias jconsole='"C:/Program Files/Corretto/jdk1.8.0_212/bin/jconsole"'
-alias avro-tools='java -jar D:/cygwin/opt/apache-avro-1.8/avro-tools-1.8.1.jar'
+alias avro-tools='java -jar $OPT/apache-avro-1.9/avro-tools-1.9.0.jar'
 #alias winpty='$OPT/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 alias pip='python -m pip'
 alias aws='python -m awscli'
