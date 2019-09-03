@@ -211,19 +211,19 @@ function print_tty_title {
 
 OPT=/c/cygwin64/Opt
 
-export vi='"C:/Program Files (x86)/Vim/vim81/gvim.exe"'
-export EDITOR=$vi
-alias vi=$vi
+#export vi='"C:/Program Files (x86)/Vim/vim81/gvim.exe"'
+#export EDITOR=$vi
+#alias vi=$vi
 alias subl='"C:/Program Files/Sublime Text 3/subl"'
 #alias chocolatey='$OPT/chocolatey/bin/chocolatey.bat'
 #alias start=cygstart
-alias showimage=cygstart
+#alias showimage=cygstart
 alias screen='screen -D -R -R'
 alias l.='ls -Ad .*'
-alias fish='PATH=/usr/local/bin:/usr/bin:$OPT/Git/cmd fish'
+#alias fish='PATH=/usr/local/bin:/usr/bin:$OPT/Git/cmd fish'
 alias rustc='$OPT/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
-alias nuget='$OPT/NuGet/nuget.exe'
+#alias nuget='$OPT/NuGet/nuget.exe'
 alias mvn='JAVA_HOME="C:/Program Files/Corretto/jdk1.8.0_222" \
   $OPT/apache-maven-3/bin/mvn'
 alias java='"C:/Program Files/Corretto/jdk1.8.0_222/bin/java"'
