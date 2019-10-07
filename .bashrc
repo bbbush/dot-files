@@ -15,7 +15,7 @@ alias screen='abduco -Af dvtm'
 alias abduco='[[ "$TERM" =~ "dvtm" ]] && echo "in dvtm" || \abduco'
 alias emacs='emacs -nw'
 alias start='xdg-open'
-alias xfreerdp='xfreerdp /size:1280x900 /d:msdomain1 /u:byuan +clipboard'
+alias rdp-client='wlfreerdp /d:msdomain1 /u:byuan +auto-reconnect +clipboard +fonts'
 
 C_NONE="\[\033[m\]"
 C_RED="\[\033[1;31m\]"
@@ -59,6 +59,7 @@ function ssh_keygen_internal_server
 }
 
 alias ssh-keygen=ssh_keygen_internal_server
-alias npm="PREFIX=$HOME/.npm-modules/ npm"
+#alias npm="PREFIX=$HOME/.npm-modules/ npm"
+alias avro-tools="java -jar /opt/avro-tools/avro-tools-1.9.0.jar"
 
 # vim: set ai expandtab sw=2:
