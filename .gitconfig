@@ -86,3 +86,5 @@
 	cache = true
 [status]
 	submoduleSummary = false
+[protocol]
+	version = 2
