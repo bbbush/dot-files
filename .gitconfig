@@ -1,6 +1,8 @@
 [user]
 	email = Blue.Yuan@morningstar.com
 	name = Yijun "Blue" Yuan
+[credential "https://msstash.morningstar.com"]
+	username = byuan
 [color]
 	ui = auto
 	branch = always
@@ -88,3 +90,8 @@
 	submoduleSummary = false
 [protocol]
 	version = 2
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
