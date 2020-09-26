@@ -247,6 +247,7 @@ alias pr='git pr'
 alias s3key='docker run --rm -i s3key'
 alias emacs='emacsclient --alternate-editor="" -n'
 alias aws='MSYS_NO_PATHCONV=1 docker run -v ~/.aws:/root/.aws -it --rm amazon/aws-cli'
+alias aws_cd='MSYS_NO_PATHCONV=1 docker run -v ~/.aws:/root/.aws -v $(pwd):/app -it --rm amazon/aws-cli'
 
 function ssh_keygen_internal_server
 {
