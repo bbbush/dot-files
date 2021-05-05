@@ -68,3 +68,5 @@
 
 ;(require 'cl)
 ;(require 'ox-confluence)
+(display-time-mode 1)
+
