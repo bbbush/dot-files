@@ -3,6 +3,7 @@
 	name = Yijun "Blue" Yuan
 [credential "https://msstash.morningstar.com"]
 	username = byuan
+	provider = bitbucket
 [color]
 	ui = auto
 	branch = always
@@ -80,8 +81,6 @@
 	verbose = true
 [branch]
 	sort = -authordate
-[credential]
-	helper = manager
 [log]
 	date = auto:human
 [fs]
