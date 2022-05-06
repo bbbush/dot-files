@@ -224,15 +224,15 @@ alias l.='ls -Ad .*'
 alias rustc='$OPT/Rust/20150112/bin/rustc'
 #alias sn='"$PROGRAMFILES/Microsoft SDKs/Windows/v8.1A/bin/NETFX 4.5.1 Tools/x64/sn.exe"'
 alias nuget='$OPT/NuGet-5/nuget.exe'
-alias mvn='JAVA_HOME="C:/Program Files/Amazon Corretto/jdk11.0.13_8" \
+alias mvn='JAVA_HOME="C:/Program Files/Amazon Corretto/jdk11.0.15_9" \
   $OPT/apache-maven-3/bin/mvn'
-alias java='"C:/Program Files/Amazon Corretto/jdk11.0.13_8/bin/java"'
+alias java='"C:/Program Files/Amazon Corretto/jdk11.0.15_9/bin/java"'
 alias msbuild='"C:/Windows/Microsoft.NET/Framework/v4.0.30319/msbuild.exe"'
 alias msbuild_jb15='$OPT/JetMSBuild.v15.9.20.62856/MSBuild/15.0/Bin/MSBuild.exe'
 alias msbuild_jb16='"C:/Program Files/JetBrains/JetBrains Rider 2019.3.1/tools/MSBuild/Current/Bin/MSBuild.exe"'
 alias msbuild_vs2019='"C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/MSBuild/Current/Bin/MSBuild.exe"'
 alias vstest_vs2019='"C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/Common7/IDE/CommonExtensions/Microsoft/TestWindow/vstest.console.exe"'
-alias jconsole='"C:/Program Files/Amazon Corretto/jdk11.0.13_8/bin/jconsole"'
+alias jconsole='"C:/Program Files/Amazon Corretto/jdk11.0.15_9/bin/jconsole"'
 alias avro-tools='java -jar $OPT/apache-avro-1.11/avro-tools-1.11.0.jar'
 #alias winpty='$OPT/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 alias 7z='"C:/Program Files/7-zip/7z"'
@@ -278,7 +278,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 export HISTCONTROL=ignoreboth
 export LESS=-R
-export MSYS=enable_pcon
+#export MSYS=enable_pcon
 
 # vim: set ai expandtab sw=2:
 if [[ -x podman ]]; then
