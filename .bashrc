@@ -192,7 +192,7 @@ alias l.='ls -Ad .*'
 alias redis-cli='docker run --rm -it --name redis-cli redis redis-cli'
 alias tf='docker run --rm -i --name terraform hashicorp/terraform'
 alias emacs='emacsclient -c -a="" -n'
-alias vi='nvim'
+alias vi='vim -u ~/.vimrc'
 
 function ssh_keygen_internal_server
 {
