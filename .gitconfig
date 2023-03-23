@@ -1,0 +1,13 @@
+[user]
+	email = Blue.Yuan@morningstar.com
+	name = Yijun "Blue" Yuan
+[github]
+	user = bbbush
+[alias]
+  k = "!_() { gitk \"$@\"; }; _"
+  pr = "!_() { \
+	git pull origin refs/pull-requests/\"$1\"/from; \
+  }; _"
+  fetch-pr ="!_() {\
+	git fetch origin refs/pull-requests/\"$1\"/from; \
+  }; _"
