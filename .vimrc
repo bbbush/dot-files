@@ -32,3 +32,7 @@ noremap  <C-K>         gk
 inoremap <M-Home> <C-O>g0
 inoremap <M-End>  <C-O>g$
 
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
