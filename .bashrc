@@ -39,8 +39,7 @@
 #
 # Uncomment to turn on programmable completion enhancements.
 # Any completions you add in ~/.bash_completion are sourced last.
-# [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-#    . /usr/share/bash-completion/bash_completion
+[[ $PS1 && -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 # History Options
 #
