@@ -192,7 +192,8 @@ alias redis-cli='docker run --rm -it --name redis-cli redis redis-cli'
 alias tf='docker run --rm -i --name terraform hashicorp/terraform'
 alias emacs='emacsclient -c -a="" -n'
 alias vi='vim -u ~/.vimrc'
-alias docker='podman'
+[[ $(command -v shasum) && !$(command -v sha1sum) ]] && alias sha1sum=shasum
+[[ $(command -v podman) ]] && alias docker=podman
 
 function ssh_keygen_internal_server
 {
@@ -212,10 +213,6 @@ export HISTSIZE=
 export HISTCONTROL=ignoreboth
 export LESS=-R
 export HOMEBREW_NO_AUTO_UPDATE=1
-
-if [[ -x podman ]]; then
-	alias docker=podman
-fi
 
 C_NONE="\[\033[m\]"
 C_RED="\[\033[1;31m\]"
