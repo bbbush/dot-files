@@ -213,6 +213,7 @@ export HISTSIZE=
 export HISTCONTROL=ignoreboth
 export LESS=-R
 export HOMEBREW_NO_AUTO_UPDATE=1
+export PIP_REQUIRE_VIRTUALENV=1
 
 C_NONE="\[\033[m\]"
 C_RED="\[\033[1;31m\]"
