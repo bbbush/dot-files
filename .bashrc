@@ -237,3 +237,17 @@ SCREEN_FS="\[\033\0134\]"
 [ "$TERM" = "screen" ] &&
 PROMPT_COMMAND="echo -n -e \"\033k\033\0134\"; $PROMPT_COMMAND"
 
+function aws_try_login
+{
+  aws sts get-caller-identity || { aws sso login; aws-sso-cred-restore && aws sts get-caller-identity; } || __aws_reset_login
+}
+
+function __aws_reset_login
+{
+ mkdir -p ~/.aws && \
+   base64 -d > ~/.aws/config <<<W2RlZmF1bHRdCnNzb19zdGFydF91cmwgPSBodHRwczovL21vcm5pbmdzdGFyLXNzby5hd3NhcHBzLmNvbS9zdGFydC8Kc3NvX3JlZ2lvbiA9IHVzLWVhc3QtMQo= && \
+   aws configure sso --profile default && \
+   sed -i -e 's,\[default],[profile default],' ~/.aws/config
+ aws-sso-cred-restore && aws sts get-caller-identity
+}
+
