@@ -236,18 +236,27 @@ alias jconsole='"C:/Program Files/Amazon Corretto/jdk11.0.15_9/bin/jconsole"'
 alias avro-tools='java -jar $OPT/apache-avro-1.11/avro-tools-1.11.0.jar'
 #alias winpty='$OPT/winpty-0.4.2-cygwin-2.6.1-ia32/bin/winpty'
 alias 7z='"C:/Program Files/7-zip/7z"'
-alias redis-cli='docker run --rm -it --name redis-cli redis redis-cli'
-alias tf='docker run --rm -i --name terraform hashicorp/terraform'
 #alias tf='$OPT/terraform-0.12-x64/terraform.exe'
 alias jq='$OPT/jq-1.6-x64/jq-win64.exe'
 alias mc='winpty $OPT/minikube-x64/minikube-windows-amd64.exe'
 alias kc='$OPT/kubernetes-client-x64/kubectl.exe'
 alias kubefed='$OPT/kubernetes-client-x64/kubefed.exe'
 alias pr='git pr'
-alias s3key='docker run --rm -i s3key'
 alias emacs='emacsclient --alternate-editor="" -n'
-alias aws='MSYS_NO_PATHCONV=1 docker run -v ~/.aws:/root/.aws -i --rm amazon/aws-cli'
-alias aws_cd='MSYS_NO_PATHCONV=1 docker run -v ~/.aws:/root/.aws -v $(pwd):/.pwd -i --rm amazon/aws-cli'
+
+function aws_try_login
+{
+  aws sts get-caller-identity || { aws sso login; aws-sso-cred-restore && aws sts get-caller-identity; } || __aws_reset_login
+}
+
+function __aws_reset_login
+{
+  mkdir -p ~/.aws && \
+    base64 -d > ~/.aws/config <<<W2RlZmF1bHRdCnNzb19zdGFydF91cmwgPSBodHRwczovL21vcm5pbmdzdGFyLXNzby5hd3NhcHBzLmNvbS9zdGFydC8Kc3NvX3JlZ2lvbiA9IHVzLWVhc3QtMQo= && \
+    aws configure sso --profile default && \
+    sed -i -e 's,\[default],[profile default],' ~/.aws/config
+    aws-sso-cred-restore && aws sts get-caller-identity
+}
 
 function ssh_keygen_internal_server
 {
@@ -281,6 +290,3 @@ export LESS=-R
 #export MSYS=enable_pcon
 
 # vim: set ai expandtab sw=2:
-if [[ -x podman ]]; then
-	alias docker=podman
-fi
