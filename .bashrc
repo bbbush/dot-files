@@ -251,3 +251,8 @@ function __aws_reset_login
  aws-sso-cred-restore && aws sts get-caller-identity
 }
 
+function aws_paste_credentials
+{
+  sed 's,\[.*\],[default],' > ~/.aws/credentials
+}
+
