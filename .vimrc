@@ -11,10 +11,12 @@ endif
 
 " Some common setup
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
+if has('vim')
+  source $VIMRUNTIME/vimrc_example.vim
+endif
 if !exists("g:syntax_on")
-    syntax enable
-    filetype on
+  syntax enable
+  filetype on
 endif
 
 
