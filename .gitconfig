@@ -1,6 +1,6 @@
 [user]
 	email = bbbush.yuan@gmail.com
-	name = Yijun B. Yuan
+	name = Yijun Blue Yuan
 [color]
 	ui = auto
 [github]
@@ -13,3 +13,10 @@
 	k = "!_() { gitk \"$@\"; }; _"
 [commit]
 	verbose = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[includeIf "gitdir:~/GitHub/"]
+        path = ~.gitconfig-github
