@@ -52,3 +52,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; https://lwn.net/Articles/1001869/
+(rassq-delete-all 'emacs-lisp-mode auto-mode-alist)
+(setq enable-local-variables nil)
