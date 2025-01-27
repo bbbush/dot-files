@@ -31,3 +31,5 @@
   (global-set-key (kbd "<M-up>") nil) ; 'backward-up-list)
   (global-set-key (kbd "<M-down>") nil) ; 'forward-list)
   (global-set-key (kbd "<M-delete>") 'kill-word))
+
+(recentf-mode 1)
