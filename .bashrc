@@ -236,7 +236,11 @@ PROMPT_COMMAND="echo -n -e \"\033k\033\0134\"; $PROMPT_COMMAND"
 
 function aws_try_login
 {
-  aws sts get-caller-identity || { aws sso login; aws-sso-cred-restore && aws sts get-caller-identity; } || __aws_reset_login
+  if command -v aws-sso-cred-restore; then
+    aws sts get-caller-identity || { aws sso login; aws-sso-cred-restore && aws sts get-caller-identity; } || __aws_reset_login
+  else
+    echo "cannot find aws-sso-cred-restore" >&2
+  fi
 }
 
 function __aws_reset_login
