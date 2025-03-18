@@ -258,8 +258,14 @@ function aws_paste_credentials
   sed 's,\[.*\],[default],' > ~/.aws/credentials
 }
 
-function get_token(){
+function get_token
+{
   UIM_HOST="${1:-https://www.us-stg-api.morningstar.com/token/oauth}"
   TOKEN="$(curl -sS -f -u blue.yuan@morningstar.com -X POST "$UIM_HOST" | jq -r '.access_token')";
+}
+
+function gen_recalc_postbody
+{
+  tr -d '-' | yq -p csv '[ .[] | {"masterPortfolioId":.master_portfolio_id, "portfolioDate":.portfolio_date, "action":"UPDATE"} ]' -o json | pbcopy
 }
 
