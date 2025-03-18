@@ -211,6 +211,7 @@ export HISTCONTROL=ignoreboth
 export LESS=-R
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PIP_REQUIRE_VIRTUALENV=1
+export AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT=1
 
 C_NONE="\[\033[m\]"
 C_RED="\[\033[1;31m\]"
@@ -255,5 +256,10 @@ function __aws_reset_login
 function aws_paste_credentials
 {
   sed 's,\[.*\],[default],' > ~/.aws/credentials
+}
+
+function get_token(){
+  UIM_HOST="${1:-https://www.us-stg-api.morningstar.com/token/oauth}"
+  TOKEN="$(curl -sS -f -u blue.yuan@morningstar.com -X POST "$UIM_HOST" | jq -r '.access_token')";
 }
 

@@ -10,5 +10,6 @@
 		"<D-x>": false,
 		"<D-v>": false,
 		"<D-z>": false,
-	}
+	},
+	"neovintageous_build_version": 13200,
 }
