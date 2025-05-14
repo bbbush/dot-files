@@ -211,7 +211,7 @@ export HISTCONTROL=ignoreboth
 export LESS=-R
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PIP_REQUIRE_VIRTUALENV=1
-export AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT=1
+export AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT=true
 
 C_NONE="\[\033[m\]"
 C_RED="\[\033[1;31m\]"
@@ -255,7 +255,7 @@ function __aws_reset_login
 
 function aws_paste_credentials
 {
-  sed 's,\[.*\],[default],' > ~/.aws/credentials
+  sed 's,\[.*\],['"${1:-prod}"'],' > ~/.aws/credentials
 }
 
 function get_token

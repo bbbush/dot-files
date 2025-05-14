@@ -12,4 +12,9 @@
 		"<D-z>": false,
 	},
 	"neovintageous_build_version": 13200,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": true,
 }
