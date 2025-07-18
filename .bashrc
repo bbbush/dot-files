@@ -255,7 +255,13 @@ function __aws_reset_login
 
 function aws_paste_credentials
 {
-  sed 's,\[.*\],['"${1:-prod}"'],' > ~/.aws/credentials
+  local AWS_PROFILE CREDENTIALS
+  AWS_PROFILE="${1:-prod}"
+  CREDENTIALS=$(
+    awk '{ if(/^\[/){found=(/^\['"${AWS_PROFILE}"'\]$/)} if(!found){print} }' <~/.aws/credentials
+    sed 's,\[.*\],['"$AWS_PROFILE"'],'
+  )
+  echo "$CREDENTIALS" >~/.aws/credentials
 }
 
 function get_token
