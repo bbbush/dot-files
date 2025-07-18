@@ -6,7 +6,7 @@
 [alias]
   k = "!_() { gitk \"$@\"; }; _"
   pr = "!_() { \
-	git pull origin refs/pull-requests/\"$1\"/from; \
+	git pull --no-rebase origin refs/pull-requests/\"$1\"/from; \
   }; _"
   fetch-pr ="!_() {\
 	git fetch origin refs/pull-requests/\"$1\"/from; \
@@ -15,7 +15,7 @@
 	provider = bitbucket
 [credential]
 	helper = osxkeychain
-	helper = 
+	helper =
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true

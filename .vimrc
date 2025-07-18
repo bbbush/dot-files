@@ -1,4 +1,4 @@
-" vim:expandtab shiftwidth=2 tabstop=8 textwidth=72
+" vim:expandtab shiftwidth=2 tabstop=8 textwidth=72:
 "
 " Set encoding before anything else. for example,
 " set langmenu=none " must be defined earlier, see help.
@@ -18,6 +18,7 @@ if !exists("g:syntax_on")
   syntax enable
   filetype on
 endif
+set modeline
 
 
 " Personal flavor
