@@ -210,6 +210,7 @@ export HISTSIZE=
 export HISTCONTROL=ignoreboth
 export LESS=-R
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 export PIP_REQUIRE_VIRTUALENV=1
 export AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT=true
 
