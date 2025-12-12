@@ -13,11 +13,17 @@
 (require 'package)
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-                                        ; http://emacswiki.org/emacs/AutoSave
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+
+; https://emacs.stackexchange.com/a/79472
+(let ((save-files-directory
+          (file-name-concat user-emacs-directory
+                               "auto-save/"))) ;;; <-- add trailing slash 
+  (make-directory save-files-directory :parents)
+  (setq auto-save-file-name-transforms
+	`((".*" ,save-files-directory t)))
+  (setq lock-file-name-transforms
+  `((".*" ,save-files-directory t))))
+
 
 (display-time-mode 1)
 
@@ -33,3 +39,8 @@
   (global-set-key (kbd "<M-delete>") 'kill-word))
 
 (recentf-mode 1)
+
+(add-hook 'org-mode-hook 'flyspell-mode)
+
+(add-to-list 'ispell-skip-region-alist '("#\\+BEGIN_SRC" . "#\\+END_SRC"))
+(add-to-list 'ispell-skip-region-alist '("PROPERTIES" . ":END:"))
