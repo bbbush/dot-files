@@ -213,6 +213,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 export PIP_REQUIRE_VIRTUALENV=1
 export AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT=true
+export REQUESTS_CA_BUNDLE="$(brew --prefix ca-certificates)/share/ca-certificates/ZscalerRootCA-Feb2025.pem"
+export SSL_CERT_FILE="${REQUESTS_CA_BUNDLE}"
 
 C_NONE="\[\033[m\]"
 C_RED="\[\033[1;31m\]"
@@ -238,20 +240,61 @@ PROMPT_COMMAND="echo -n -e \"\033k\033\0134\"; $PROMPT_COMMAND"
 
 function aws_try_login
 {
-  if command -v aws-sso-cred-restore; then
-    aws sts get-caller-identity || { aws sso login; aws-sso-cred-restore && aws sts get-caller-identity; } || __aws_reset_login
+  local PROFILE="$1"
+  local ACCOUNT_ID="$2"
+  local ROLE_NAME="$3"
+
+  if [[ -z "${PROFILE}" || "${PROFILE}" = "default" ]]; then
+    aws sts get-caller-identity || { __aws_reset_login && aws sts get-caller-identity; }
   else
-    echo "cannot find aws-sso-cred-restore" >&2
+    aws sts --profile "${PROFILE}" get-caller-identity  || { __aws_reset_login "$@" && aws sts --profile "${PROFILE}" get-caller-identity; }
+  fi
+}
+
+function aws_sso_cred_restore
+{
+  local PROFILE="$1"
+
+  if [[ -z "${PROFILE}" || "${PROFILE}" = "default" ]]; then
+    eval "$(aws configure export-credentials --format env-no-export)"
+    aws configure set aws_access_key_id "$AWS_ACCESS_KEY_ID"
+    aws configure set aws_secret_access_key "$AWS_SECRET_ACCESS_KEY"
+    aws configure set aws_session_token "$AWS_SESSION_TOKEN"
+  else
+    eval "$(aws configure export-credentials --profile "$PROFILE" --format env-no-export)"
+    aws configure --profile "$PROFILE" set aws_access_key_id "$AWS_ACCESS_KEY_ID"
+    aws configure --profile "$PROFILE" set aws_secret_access_key "$AWS_SECRET_ACCESS_KEY"
+    aws configure --profile "$PROFILE" set aws_session_token "$AWS_SESSION_TOKEN"
   fi
 }
 
 function __aws_reset_login
 {
- mkdir -p ~/.aws && \
-   base64 -d > ~/.aws/config <<<W2RlZmF1bHRdCnNzb19zdGFydF91cmwgPSBodHRwczovL21vcm5pbmdzdGFyLXNzby5hd3NhcHBzLmNvbS9zdGFydC8Kc3NvX3JlZ2lvbiA9IHVzLWVhc3QtMQo= && \
-   aws configure sso --profile default && \
-   sed -i -e 's,\[default],[profile default],' ~/.aws/config
- aws-sso-cred-restore && aws sts get-caller-identity
+  local PROFILE="$1"
+  local ACCOUNT_ID="$2"
+  local ROLE_NAME="$3"
+
+  if [[ -z "${PROFILE}" ]]; then
+    ACCOUNT_ID="187914334366"
+    ROLE_NAME="mstar-operator"
+  fi
+
+  local START_URL="https://morningstar-sso.awsapps.com/start/"
+  local SSO_REGION="us-east-1"
+
+  if [[ -z "${PROFILE}" || "${PROFILE}" = "default" ]]; then
+    aws configure set sso_start_url "$START_URL"
+    aws configure set sso_region "$SSO_REGION"
+    aws configure set sso_account_id "$ACCOUNT_ID"
+    aws configure set sso_role_name "$ROLE_NAME"
+
+    aws sso login
+  else
+    aws configure --profile "${PROFILE}" set sso_start_url "$START_URL"
+    aws configure --profile "${PROFILE}" set sso_region "$SSO_REGION"
+    aws configure --profile "${PROFILE}" set sso_account_id "$ACCOUNT_ID"
+    aws configure --profile "${PROFILE}" set sso_role_name "$ROLE_NAME"
+  fi
 }
 
 function aws_paste_credentials
