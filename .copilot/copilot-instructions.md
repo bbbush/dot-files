@@ -47,3 +47,5 @@
 - Prefer the src/ layout when libraries and applications need separation or when unit testing is required.
 - Prompt the user to install packages and prefer uv over other package managers.
 - Try installing missing modules with "uv pip" and assume uv is installed globally.
+- If the application uses the starflow package, assume Python 3.11 and a Poetry-managed project.
+- Otherwise, assume the python executable comes from a virtual environment (usually .venv in the working directory).
