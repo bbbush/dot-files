@@ -49,3 +49,4 @@
 - Try installing missing modules with "uv pip" and assume uv is installed globally.
 - If the application uses the starflow package, assume Python 3.11 and a Poetry-managed project.
 - Otherwise, assume the python executable comes from a virtual environment (usually .venv in the working directory).
+- For generated code, prefer a pydantic BaseModel when a dictionary would have more than 4-5 properties.
