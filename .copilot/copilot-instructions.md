@@ -40,3 +40,10 @@
 
 ## Domain Knowledge
 - When there is any question related to the definition of a term, check if the registry/ folder contains related information. For example, ~/.copilot/registry/id-instructions.md might help understand various identifiers.
+
+## Python project preferences
+- Prefer pydantic-settings over dotenv.
+- Prefer pytest over unittest.
+- Prefer the src/ layout when libraries and applications need separation or when unit testing is required.
+- Prompt the user to install packages and prefer uv over other package managers.
+- Try installing missing modules with "uv pip" and assume uv is installed globally.
