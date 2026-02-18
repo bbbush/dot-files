@@ -29,8 +29,11 @@
 ## Tooling and artifacts
 - Do not create redundant summary or file-listing files in the working directory unless asked.
 
-## Repository conventions
+## Repository and filesystem conventions
 - The refs/ folder is reference-only and must not be modified or updated.
+- Use .env for secret values; use files like .stg.env to override values.
+- .gitignore should include both .env* and .*.env to cover plain and period-prefixed env files.
+- Add .env to the working directory and load it with dotenv or pydantic-settings.
 
 ## Git commit requirements
 - When asked to commit, prefix the commit subject with "copilot: ".
