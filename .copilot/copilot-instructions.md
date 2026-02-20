@@ -38,8 +38,8 @@
 ## Git commit requirements
 - When asked to commit, prefix the commit subject with "copilot: ".
 - Always include a readable summary in the commit message body.
-- The summary should state what changed; a separate paragraph should concisely explain why it changed, keeping both concise and easy to read.
-- In a later paragraph, include: tool (copilot or Claude), agent (copilot or other), model name and version, time and duration of the work, and an approximate token count.
+- The summary should state what changed; a separate paragraph should concisely explain why it changed, keeping both concise and easy to read. Always add blank lines after the summary.
+- In a later paragraph, include: tool (copilot or Claude), agent (copilot or other), model name and version, time and duration of the work, and an approximate token count. If the model name and/or version is not certain, get the best information as possible, do not make up values.
 
 ## Domain Knowledge
 - When there is any question related to the definition of a term, check if the registry/ folder contains related information. For example, ~/.copilot/registry/id-instructions.md might help understand various identifiers.
