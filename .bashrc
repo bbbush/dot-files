@@ -213,9 +213,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 export PIP_REQUIRE_VIRTUALENV=1
 export AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT=true
-export REQUESTS_CA_BUNDLE="$HOME/.ssl/ZscalerRootCA-Feb2025.pem"
+export REQUESTS_CA_BUNDLE="$HOME/.ssl/bundle.pem"
 export SSL_CERT_FILE="${REQUESTS_CA_BUNDLE}"
-alias aws="REQUESTS_CA_BUNDLE=$HOME/.ssl/AmazonRootCA.pem aws"
 
 C_NONE="\[\033[m\]"
 C_RED="\[\033[1;31m\]"
@@ -313,6 +312,11 @@ function get_token
 {
   UIM_HOST="${1:-https://www.us-stg-api.morningstar.com/token/oauth}"
   TOKEN="$(curl -sS -f -u blue.yuan@morningstar.com -X POST "$UIM_HOST" | jq -r '.access_token')";
+}
+
+function gen_bundle
+{
+  cat $(.venv/bin/python -c "import certifi; print(certifi.where())") ~/.ssl/ZscalerRootCA-Feb2025.pem > ~/.ssl/bundle.pem
 }
 
 function gen_recalc_postbody
