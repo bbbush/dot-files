@@ -299,10 +299,11 @@ function __aws_reset_login
 
 function aws_paste_credentials
 {
+  # strip \r to work with pbpaste
   local AWS_PROFILE CREDENTIALS
   AWS_PROFILE="${1:-prod}"
   CREDENTIALS=$(
-    awk '{ if(/^\[/){found=(/^\['"${AWS_PROFILE}"'\]$/)} if(!found){print} }' <~/.aws/credentials
+    awk '{ sub(/\r$/, ""); if(/^\[/){found=(/^\['"${AWS_PROFILE}"'\]$/)} if(!found){print} }' <~/.aws/credentials
     sed 's,\[.*\],['"$AWS_PROFILE"'],'
   )
   echo "$CREDENTIALS" >~/.aws/credentials
